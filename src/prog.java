@@ -8,25 +8,38 @@ public class prog {
 		int hrstrabalhadas;
 		float valorhora;
 		char sn;
+		int opcao;
 		do {
-			System.out.println("Nome: ");
+			System.out.print("Nome: ");
 			nome = sc.next();
-			System.out.println("Horas trabalhadas: ");
+			System.out.print("Horas trabalhadas: ");
 			hrstrabalhadas = sc.nextInt();
 			while (hrstrabalhadas < 0) {
-				System.out.println("Horas trabalhadas: ");
+				System.out.print("Horas trabalhadas: ");
 				hrstrabalhadas = sc.nextInt();
 			}
-			System.out.println("Valor por hora: ");
+			System.out.print("Valor por hora: ");
 			valorhora = sc.nextFloat();
 			while (valorhora < 0) {
-				System.out.println("Valor por hora: ");
+				System.out.print("Valor por hora: ");
 				valorhora = sc.nextFloat();
 			}
-			System.out.println("Digitar outro (S/N)?");
+			System.out.print("Digitar outro (S/N)?");
 			sn = sc.next().charAt(0);
 			
 		} while(sn == 'S');
+		//fim leitura
+		// menu
+		System.out.println();
+		do {
+			System.out.println("MENU");
+			System.out.println("1- Total de horas trabalhadas");
+			System.out.println("2- Custo Total");
+			System.out.println("3- Nome da pessoa que ganhou mais");
+			System.out.println("4- Sair");
+			System.out.print("Digite uma opção: ");
+			opcao = sc.nextInt();
+		} while(opcao != 4);
 		
 	}
 
