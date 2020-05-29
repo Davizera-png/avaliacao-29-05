@@ -1,14 +1,18 @@
 import java.util.Scanner;
+import java.util.Locale;
 public class prog {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		String nome;
-		int hrstrabalhadas;
-		float valorhora;
+		int hrstrabalhadas, totalhrs;
+		float valorhora, custototal, custo;
 		char sn;
 		int opcao;
+		custototal = 0;
+		totalhrs = 0;
 		do {
 			System.out.print("Nome: ");
 			nome = sc.next();
@@ -24,8 +28,11 @@ public class prog {
 				System.out.print("Valor por hora: ");
 				valorhora = sc.nextFloat();
 			}
-			System.out.print("Digitar outro (S/N)?");
+			System.out.print("Digitar outro (S/N)? ");
 			sn = sc.next().charAt(0);
+			custo = valorhora * hrstrabalhadas;
+			totalhrs = totalhrs + hrstrabalhadas;
+			custototal = custototal + custo;
 			
 		} while(sn == 'S');
 		//fim leitura
@@ -39,7 +46,19 @@ public class prog {
 			System.out.println("4- Sair");
 			System.out.print("Digite uma opção: ");
 			opcao = sc.nextInt();
+			if (opcao == 1) {
+				System.out.println();
+				System.out.println("Total de horas = "+ totalhrs);
+				System.out.println();
+			} else if (opcao == 2) {
+				System.out.println();
+				System.out.printf("Custo total = R$ %.2f", custototal);
+				System.out.println();
+			}
 		} while(opcao != 4);
+		//fim do menu
+		
+		
 		
 	}
 
