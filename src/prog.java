@@ -6,15 +6,15 @@ public class prog {
 		// TODO Auto-generated method stub
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		String nome, recebeumais;
+		String nome;
 		int hrstrabalhadas, totalhrs;
 		float valorhora, custototal, custo;
 		char sn;
 		int opcao;
 		custototal = 0;
 		totalhrs = 0;
-		recebeumais = null;
-		nome = null;
+		
+		
 		do {
 			System.out.print("Nome: ");
 			nome = sc.next();
@@ -36,9 +36,8 @@ public class prog {
 			totalhrs = totalhrs + hrstrabalhadas;
 			custototal = custototal + custo;
 			
-			if (custo > totalhrs - custo) {
-				recebeumais = recebeumais + nome;
-			}
+			
+			
 			} while(sn == 'S');
 		//fim leitura
 		// menu
@@ -60,8 +59,8 @@ public class prog {
 				System.out.printf("Custo total = R$ %.2f", custototal);
 				System.out.println();
 			} else {
-				System.out.printf("Nome da pessoa que ganhou mais: ", recebeumais);
-				
+				System.out.println("Nome da pessoa que ganhou mais: ");
+				//infelizmente não deu 
 			}
 		} while(opcao != 4);
 		//fim do menu
